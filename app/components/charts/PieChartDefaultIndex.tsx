@@ -1,4 +1,4 @@
-import { PieDataItem } from "@/app/types/chartTypes";
+import { PieDataItem } from "@/app/types/types";
 import { Pie, PieChart, Tooltip } from "recharts";
 
 export default function PieChartDefaultIndex({
@@ -27,7 +27,7 @@ export default function PieChartDefaultIndex({
           dataKey="value"
           isAnimationActive={isAnimationActive}
         />
-        <Tooltip formatter={(value: number) => value.toFixed(2)} />
+        <Tooltip formatter={(value: number) => `${value.toFixed(2)}%`} />
       </PieChart>
     </div>
   );

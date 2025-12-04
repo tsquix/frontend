@@ -1,4 +1,4 @@
-import { PieDataItem } from "@/app/types/chartTypes";
+import { PieDataItem } from "@/app/types/types";
 import { Cell, Pie, PieChart, PieLabelRenderProps } from "recharts";
 
 const RADIAN = Math.PI / 180;

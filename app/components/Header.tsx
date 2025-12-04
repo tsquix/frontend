@@ -11,7 +11,7 @@ const Header = () => {
         <Link href={"/energy-mix"}>Show energy mix</Link>
       </div>
       <div className="hover:opacity-70">
-        <Link href={"/"}>xd</Link>
+        <Link href={"/optimal-charge-range"}>Show optimal charge range</Link>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { PieDataItem } from "@/app/types/chartTypes";
+import { PieDataItem } from "@/app/types/types";
 import { Pie, PieChart, Sector, Tooltip } from "recharts";
 import { PieSectorDataItem } from "recharts/types/polar/Pie";
 import { TooltipIndex } from "recharts/types/state/tooltipSlice";
@@ -94,13 +94,15 @@ export default function CustomActiveShapePieChart({
       style={{ width: 640, height: 640 }}
       className="flex flex-col items-center"
     >
-      <h1 className="text-xl font-semibold">Wykres na Dziś</h1>
-      <p>procent czystej energii: {data.clean} %</p>
+      <div className="-mb-24 text-center">
+        <h1 className="text-xl font-semibold">Wykres na Dziś</h1>
+        <p>procent czystej energii: {data.clean} %</p>
+      </div>
 
       <PieChart
         width={600}
         height={600}
-        margin={{ top: 20, right: 120, bottom: 0, left: 120 }}
+        margin={{ top: 0, right: 120, bottom: 0, left: 120 }}
       >
         <Pie
           activeShape={renderActiveShape}
