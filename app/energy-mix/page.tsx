@@ -9,7 +9,7 @@ import PieChartDefaultIndex from "../components/charts/PieChartDefaultIndex";
 import PieChartWithCustomizedLabel from "../components/charts/PieChartWithCustomizedLabel";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-const Page = () => {
+const EnergyMix = () => {
   const [data, setData] = useState<PieDataItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   // prepare data for piecharts
@@ -27,9 +27,9 @@ const Page = () => {
       try {
         setIsLoading(true);
         const res = await axios.get<EnergyData[]>(
-          "http://localhost:3001/api/generationMix"
+          "https://backend-mxg2.onrender.com/api/generationMix"
         );
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data) {
           setData(formatAllForPie(res.data));
         }
@@ -68,4 +68,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default EnergyMix;

@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import axios from "axios";
 import { OptimalChargeData } from "../types/types";
 
-const Page = () => {
+const OptimalChargeRange = () => {
   const [range, setRange] = useState<number | "">("");
   const [data, setData] = useState<OptimalChargeData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -16,7 +16,7 @@ const Page = () => {
       try {
         setIsLoading(true);
         const res = await axios.get<OptimalChargeData>(
-          "http://localhost:3000/api/optimalChargeRange",
+          "https://backend-mxg2.onrender.com/api/optimalChargeRange",
           {
             params: { hours: range },
           }
@@ -59,6 +59,7 @@ const Page = () => {
                 required
               />
               <button
+                role="button"
                 type="submit"
                 className={`text-white bg-linear-to-r  font-medium rounded-base text-sm px-4 py-2.5 cursor-pointer ${
                   isLoading
@@ -67,7 +68,7 @@ const Page = () => {
                 }`}
                 disabled={isLoading}
               >
-                Zatwierdź
+                Zatwierdz
               </button>
             </form>
           </div>
@@ -110,4 +111,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default OptimalChargeRange;
